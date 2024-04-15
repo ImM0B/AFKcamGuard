@@ -22,8 +22,7 @@ function ctrl_c(){
 trap ctrl_c INT
 
 # VARIABLES A CAMBIAR
-gmail_account="tugmail@gmail.com"
-os="linux" #linux o wsl
+gmail_account="tugmail@gmail.com" #Configura el archivo .muttrc en la carpeta /root
 /usr/bin/xfce4-power-manager &>/dev/null & disown # Inicia tu power manager 
 #Configurarlo para que cuando la tapa se cierre solo se bloquee
 
@@ -64,12 +63,7 @@ if [ "$EUID" -ne 0 ]; then
 	echo -e "${redColour}[!] Ejecuta este script con sudo${endColour}"
 fi
 tput civis
-if [ "$os" = "linux" ]; then
-	lid_state=$(cat /proc/acpi/button/lid/LID/state | awk '{print $2}')
-	checkingLid &
-	checkingLid_pid=$!
-	lidOpen
-else
-	lid_state="?"
-	lidOpen
-fi
+lid_state=$(cat /proc/acpi/button/lid/LID/state | awk '{print $2}')
+checkingLid &
+checkingLid_pid=$!
+lidOpen
