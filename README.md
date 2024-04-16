@@ -43,7 +43,7 @@ chmod +x camGuard.sh
 
 - **Ejecutar el script :**
 ```bash
-./camGuard.sh
+sudo ./camGuard.sh
 ```
 
 ---
