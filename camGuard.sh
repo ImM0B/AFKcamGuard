@@ -23,7 +23,8 @@ trap ctrl_c INT
 
 # VARIABLES A CAMBIAR
 gmail_account="tugmail@gmail.com" #Configura el archivo .muttrc en la carpeta /root
-/usr/bin/xfce4-power-manager &>/dev/null & disown # Inicia tu power manager 
+lid_state_file="/proc/acpi/button/lid/LID/state" #Comprueba si este es el archivo que muestra si la tapa del portátil está abierta o cerrada
+/usr/bin/xfce4-power-manager &>/dev/null & disown # Inicia tu power manager , este es el mío, quizás debas cambiarlo
 #Configurarlo para que cuando la tapa se cierre solo se bloquee
 
 function checkingLid(){
