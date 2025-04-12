@@ -1,4 +1,4 @@
-### CamGuard
+### CamGuard 📸
 
 Este script está diseñado para Linux con el objetivo de vigilar tu portátil mientras te encuentras "Away From Keyboard" (AFK). La función principal del script es:
 
